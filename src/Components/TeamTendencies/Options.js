@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export function Options(props) {
     let [viewMenu, setViewMenu] = useState(false);
+
+    useEffect(() => {
+        seasonClick(2020);
+        downClick(1);
+        distanceClick(7,10);
+    }, []);
 
     function seasonClick(season) {
         let items = document.getElementsByClassName("season");
@@ -31,12 +37,12 @@ export function Options(props) {
         let items = document.getElementsByClassName("distance");
 
         for (let i = 0; i < items.length; i++) {
-            items[i].style.borderTop = "2px solid #FFFFFF";
-            items[i].style.borderBottom = "2px solid #FFFFFF";
+            items[i].style.removeProperty("border");
+            // items[i].style.removeProperty("border-bottom");
         }
 
-        document.getElementById(`distance-${lower}-${upper}`).style.borderTop = "2px solid #10B981";
-        document.getElementById(`distance-${lower}-${upper}`).style.borderBottom = "2px solid #10B981";
+        document.getElementById(`distance-${lower}-${upper}`).style.border = "2px solid #10B981";
+        // document.getElementById(`distance-${lower}-${upper}`).style.borderBottom = "2px solid #10B981";
 
         props.setDistanceLowerBound(lower);
         props.setDistanceUpperBound(upper);
@@ -53,7 +59,7 @@ export function Options(props) {
                 </button>
             </div>
 
-            <div className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white divide-y divide-gray-100 focus:outline-none ${viewMenu ? "visible" : "hidden"}`}>
+            <div className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white divide-y divide-gray-100 z-10 ${viewMenu ? "visible" : "hidden"}`}>
                 <div className="py-1">
                     <div className="text-center font-semibold text-gray-700 block px-4 py-2">
                         Season
@@ -84,19 +90,19 @@ export function Options(props) {
                         Distance
                     </div>
                     <div>
-                        <div id="distance-1-3" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(1,3)}>
+                        <div id="distance-1-3" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(1,3)}>
                             <div className="w-16">Short</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">1-3</div>
                         </div>
-                        <div id="distance-4-6" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(4,6)}>
+                        <div id="distance-4-6" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(4,6)}>
                             <div className="w-16">Medium</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">4-6</div>
                         </div>
-                        <div id="distance-7-10" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-green-500 flex justify-around" onClick={() => distanceClick(7,10)}>
+                        <div id="distance-7-10" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(7,10)}>
                             <div className="w-16">Long</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">7-10</div>
                         </div>
-                        <div id="distance-10-99" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(10,99)}>
+                        <div id="distance-10-99" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(10,99)}>
                             <div className="w-16">Beyond</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">11+</div>
                         </div>

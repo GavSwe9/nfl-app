@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { constants } from '../../constants';
 import { Options } from './Options';
+import { TeamDisplay } from './TeamDisplay';
 
 export function TeamTendencies() {
     let [teamDataPercentages, setTeamPercentages] = useState([]);
@@ -38,13 +39,13 @@ export function TeamTendencies() {
     return (
         <div className="text-center">
             <div className="my-4 text-2xl font-extralight">
-                Run Pass Team Tendencies
+                Down & Distance Team Tendencies
             </div>
             <div className="h-20">
                 <Options setSeason={setSeason} setDown={setDown} setDistanceLowerBound={setDistanceLowerBound} setDistanceUpperBound={setDistanceUpperBound} />
             </div>
-            <div>
-                {teamDataPercentages.length}
+            <div className=" w-5/6 mx-auto bg-white rounded-md border border-gray-300 divide-y-2 divide-gray-100">
+                {teamDataPercentages.map(teamData => <TeamDisplay teamData={teamData} />)}
             </div>
         </div>
     )
