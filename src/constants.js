@@ -11,6 +11,18 @@ let constants = {
         "pass": "Pass",
         "fieldGoal": "Field Goal",
         "punt": "Punt"
+    },
+    "DOWN_ORDINAL": {
+        1: "1st",
+        2: "2nd",
+        3: "3rd",
+        4: "4th"
+    },
+    "STOCK_DISTANCE_DISPLAY": {
+        "1-3": "Short",
+        "4-6": "Medium",
+        "7-10": "Long",
+        "11-99": "Beyond",
     }
 }
 

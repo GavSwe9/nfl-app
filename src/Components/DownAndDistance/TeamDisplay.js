@@ -22,6 +22,7 @@ export function TeamDisplay(props) {
                 return team;
         }
     }
+
     return (
         <div className="flex items-center">
             <div className="w-12 h-12 p-1">
@@ -54,10 +55,45 @@ export function TeamDisplay(props) {
                 .attr("x", `${percTotal}%`)
                 .attr("width", `${props.teamData[keys[i]]*100}%`)
                 .attr("height", "100%")
-                .attr("fill", constants.PLAY_TYPE_COLORS[keys[i]]);
+                .attr("fill", constants.PLAY_TYPE_COLORS[keys[i]])
+                .on("mouseenter", (d) => statMouseEnter(d, keys[i], (props.teamData[keys[i]]*100).toFixed(1)))
+                .on("mouseout", () => statMouseLeave())
 
             percTotal += props.teamData[keys[i]]*100;
         }
+    }
+
+    function statMouseEnter(d, stat, value) {
+        d3.select("#tooltip-content-container").remove();
+
+        let tooltip = d3.select("#tooltip")
+            .style("visibility", "visible")
+            .style("top", (d.pageY - 145) + "px")
+            .style("left", d.pageX + "px")
+            .append("div")
+            .attr("id", "tooltip-content-container");
+
+        tooltip
+            .append("div")
+            .append("img")
+            .attr("src", `https://static.www.nfl.com/league/api/clubs/logos/${teamLogoName(props.teamData.team)}.svg`)
+            .attr("class", "w-16 mx-auto")
+
+        tooltip
+            .append("div")
+            .attr("class", "font-light")
+            .text(`${constants.DOWN_ORDINAL[props.situation.down]} & ${constants.STOCK_DISTANCE_DISPLAY[props.situation.distanceLowerBound.toString() + "-" + props.situation.distanceUpperBound.toString()]}`);
+
+        tooltip
+            .append("div")
+            .text(`${value}% ${constants.PLAY_TYPE_DISPLAY[stat]} Rate`);
         
+            console.log(d.pageY, d.pageX, stat, value);
+    }
+
+    function statMouseLeave() {
+        console.log("MOUSEOUT")
+        d3.select("#tooltip")
+            .style("visibility", "hidden")
     }
 }
