@@ -1,12 +1,12 @@
 import { Footer } from './Components/Footer';
-import { TeamTendencies } from './Components/TeamTendencies/TeamTendencies';
+import { DownAndDistance } from './Components/DownAndDistance/DownAndDistance';
 import { Header } from './Header';
 
 function App() {
   return (
     <div>
       <Header />
-      <TeamTendencies />
+      <DownAndDistance />
       <Footer />
     </div>
   );

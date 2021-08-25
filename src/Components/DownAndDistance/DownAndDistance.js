@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { constants } from '../../constants';
+import { Legend } from './Legend';
 import { Options } from './Options';
 import { TeamDisplay } from './TeamDisplay';
 
-export function TeamTendencies() {
+export function DownAndDistance() {
     let [teamDataPercentages, setTeamPercentages] = useState([]);
     let [season, setSeason] = useState(2020);
     let [down, setDown] = useState(1);
@@ -43,6 +44,9 @@ export function TeamTendencies() {
             </div>
             <div className="h-20">
                 <Options setSeason={setSeason} setDown={setDown} setDistanceLowerBound={setDistanceLowerBound} setDistanceUpperBound={setDistanceUpperBound} />
+            </div>
+            <div>
+                <Legend />
             </div>
             <div className=" w-5/6 mx-auto bg-white rounded-md border border-gray-300 divide-y-2 divide-gray-100">
                 {teamDataPercentages.map(teamData => <TeamDisplay teamData={teamData} />)}

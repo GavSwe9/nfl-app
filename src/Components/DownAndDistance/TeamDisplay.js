@@ -3,28 +3,8 @@ import * as d3 from 'd3'
 import { constants } from '../../constants';
 
 export function TeamDisplay(props) {
-    let [teamAbv, setTeamAbv] = useState(props.teamData.team);
-
     useEffect(() => {
         buildGraphic();
-
-        switch (props.teamData.team) {
-            case "OAK":
-                setTeamAbv("LV");
-                break;
-            case "STL":
-                setTeamAbv("LA");
-                break;
-            case "JAC":
-                setTeamAbv("JAX");
-                break;
-            case "SD":
-                setTeamAbv("LAC");
-                break;
-        
-            default:
-                break;
-        }
     }, [props.teamData]);
 
     function teamLogoName(team){

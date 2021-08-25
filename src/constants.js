@@ -5,6 +5,12 @@ let constants = {
         "pass": "#10B981",
         "fieldGoal": "#FBBF24",
         "punt": "#F87171"
+    },
+    "PLAY_TYPE_DISPLAY": {
+        "rush": "Rush",
+        "pass": "Pass",
+        "fieldGoal": "Field Goal",
+        "punt": "Punt"
     }
 }
 
