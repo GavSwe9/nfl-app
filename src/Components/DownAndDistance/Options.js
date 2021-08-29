@@ -102,7 +102,7 @@ export function Options(props) {
                             <div className="w-16">Long</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">7-10</div>
                         </div>
-                        <div id="distance-10-99" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(10,99)}>
+                        <div id="distance-11-99" className="distance w-56 mx-auto text-gray-700 px-4 py-2 text-sm rounded-md cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-white flex justify-around" onClick={() => distanceClick(11,99)}>
                             <div className="w-16">Beyond</div>
                             <div className="w-12 ml-1 bg-gray-200 text-gray-900 rounded-md cursor-pointer text-center">11+</div>
                         </div>
