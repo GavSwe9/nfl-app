@@ -1,12 +1,12 @@
 import { Footer } from './Components/Footer';
-import { DownAndDistance } from './Components/DownAndDistance/DownAndDistance';
 import { Header } from './Header';
+import { Routes } from './Components/Routes';
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <Header />
-      <DownAndDistance />
+      <Routes />
       <Footer />
     </div>
   );
