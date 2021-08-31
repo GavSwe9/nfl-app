@@ -49,7 +49,7 @@ export function DownAndDistance() {
                 <Legend />
             </div>
             <div id="tooltip" className="p-2 bg-white border border-gray-300 shadow-lg rounded-md invisible absolute z-10"></div>
-            <div className=" w-5/6 mx-auto bg-white rounded-md border border-gray-300 divide-y-2 divide-gray-100">
+            <div className="w-5/6 mx-auto bg-white rounded-md border border-gray-300 divide-y-2 divide-gray-100">
                 {teamDataPercentages.map(teamData => <TeamDisplay teamData={teamData} situation={{
                     "season": season,
                     "down": down,

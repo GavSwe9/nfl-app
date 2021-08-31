@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { constants } from '../../constants';
+import { LeaderboardTable } from './LeaderboardTable';
 
-export function Rushing() {
+export function Leaderboard(props) {
     let [season, setSeason] = useState(2020);
     let [seasonType, setSeasonType] = useState(["REG"]);
     let [weeks, setWeeks] = useState([]);
     let [teams, setTeams] = useState([]);
+    let [playerArray, setPlayerArray] = useState([]);
 
     useEffect(() => {
         let requestBody = {
@@ -18,17 +20,17 @@ export function Rushing() {
 
         fetchData();
         async function fetchData() {
-            let response = await fetch(constants.BASE_URL + "/rushingBoard", {
+            let response = await fetch(`${constants.BASE_URL}/${props.endpoint}Board`, {
                 method: "POST",
                 body: JSON.stringify(requestBody)
             });
 
             response = await response.json();
-            console.log(response);
+            setPlayerArray(response);
         }
     }, [season, seasonType, weeks, teams])
 
     return (
-        <div></div>
+        <LeaderboardTable playerArray={playerArray} type={props.endpoint} />
     )
 }

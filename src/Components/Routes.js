@@ -4,35 +4,31 @@ import {
     Route,
 } from 'react-router-dom';
 import { DownAndDistance } from './DownAndDistance/DownAndDistance';
-import { Passing } from './Leaderboards/Passing';
-import { Receiving } from './Leaderboards/Receiving';
-import { Rushing } from './Leaderboards/Rushing';
+import { Leaderboard } from './Leaderboards/Leaderboard';
 import { NotFound } from './NotFound';
 
 export function Routes() {
     return (
-        <div className="flex-1">
-            <Switch>
-                <Route exact path="/">
-                    <DownAndDistance />
-                </Route>
-                <Route exact path="/DownAndDistance">
-                    <DownAndDistance />
-                </Route>
-                <Route exact path="/Passing">
-                    <Passing />
-                </Route>
-                <Route exact path="/Rushing">
-                    <Rushing />
-                </Route>
-                <Route exact path="/Receiving">
-                    <Receiving />
-                </Route>
+        <Switch>
+            <Route exact path="/">
+                <DownAndDistance />
+            </Route>
+            <Route exact path="/DownAndDistance">
+                <DownAndDistance />
+            </Route>
+            <Route exact path="/Passing">
+                <Leaderboard endpoint="passing" />
+            </Route>
+            <Route exact path="/Rushing">
+                <Leaderboard endpoint="rushing" />
+            </Route>
+            <Route exact path="/Receiving">
+                <Leaderboard endpoint="receiving" />
+            </Route>
 
-                <Route>
-                    <NotFound />
-                </Route>
-            </Switch>
-        </div>
+            <Route>
+                <NotFound />
+            </Route>
+        </Switch>
     )
 }

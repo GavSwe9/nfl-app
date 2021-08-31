@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import { constants } from '../../constants';
+import { teamLogoName } from '../../util';
 
 export function TeamDisplay(props) {
     useEffect(() => {
         buildGraphic();
     }, [props.teamData]);
-
-    function teamLogoName(team){
-        switch (props.teamData.team) {
-            case "OAK":
-                return "LV";
-            case "STL":
-                return "LA";
-            case "JAC":
-                return "JAX";
-            case "SD":
-                return "LAC";
-        
-            default:
-                return team;
-        }
-    }
 
     return (
         <div id={`DnD-team-row-${props.teamData.team}`} className="DnD-team-row flex items-center">
