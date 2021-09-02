@@ -1,9 +1,8 @@
 import React from 'react'
 import { constants } from '../../constants'
 
-export function PassingHeaderRow(props) {
+export function HeaderRow(props) {
     
-    console.log(props.type);
     if (props.type === "passing") {
         return (
             <>
