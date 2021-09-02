@@ -16,7 +16,7 @@ export function LeaderboardTable(props) {
         const headerRow = <PassingHeaderRow columns={Object.keys(props.playerArray[0])} type={props.type} />;
 
         return (
-            <div className="max-w-5/6 mx-auto my-5 bg-white rounded-md border border-gray-300 flex-1 overflow-y-auto font-mono font-light">
+            <div className="max-w-full sm:min-h-screen lg:min-h-0 mx-auto mt-5 bg-white rounded-md border border-gray-300 flex-1 overflow-auto text-xs lg:text-sm font-mono font-light">
                 <table>
                     <thead>
                         {headerRow}

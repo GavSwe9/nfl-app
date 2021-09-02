@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { constants } from '../../constants';
+import { LeaderboardOptions } from './LeaderboardOptions';
 import { LeaderboardTable } from './LeaderboardTable';
 
 export function Leaderboard(props) {
@@ -31,6 +32,13 @@ export function Leaderboard(props) {
     }, [season, seasonType, weeks, teams])
 
     return (
-        <LeaderboardTable playerArray={playerArray} type={props.endpoint} />
+        <>
+            <div className="w-11/12 md:5/6 lg:w-2/3 mx-auto flex-none">
+                <LeaderboardOptions season={season} setSeason={setSeason} seasonType={seasonType} setSeasonType={setSeasonType} weeks={weeks} setWeeks={setWeeks} teams={teams} setTeams={setTeams} />
+            </div>
+            <div className="w-11/12 md:5/6 lg:w-2/3 mx-auto flex-1 overflow-y-auto flex flex-col">
+                <LeaderboardTable playerArray={playerArray} type={props.endpoint} />
+            </div>
+        </>
     )
 }
