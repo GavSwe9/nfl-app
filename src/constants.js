@@ -33,6 +33,8 @@ let constants = {
             abbreviation: "G",
             full: "Games"
         },
+
+        // Passing
         attempts: {
             abbreviation: "Att",
             full: "Attempts"
@@ -59,36 +61,47 @@ let constants = {
         },
         attemptsPerGame: {
             abbreviation: "Att/G",
-            full: "Attempts Per Game"
+            full: "Attempts Per Game",
+            decimals: 1
         },
         completionsPerGame: {
             abbreviation: "Cmp/G",
-            full: "Completions Per Game"
+            full: "Completions Per Game",
+            decimals: 1
         },
         completionsPerAttempts: {
-            abbreviation: "Cmp/Att",
-            full: "Completions Per Attempts"
+            abbreviation: "Cmp%",
+            full: "Completions Per Attempts",
+            decimals: 1
         },
         passingYardsPerGame: {
             abbreviation: "Yds/G",
-            full: "Passing Yards Per Game"
+            full: "Passing Yards Per Game",
+            decimals: 1
         },
         interceptionsPerGame: {
             abbreviation: "Int/G",
-            full: "Interceptions Per Game"
+            full: "Interceptions Per Game",
+            decimals: 2
         },
         airYardsAttemptedPerGame: {
             abbreviation: "AttAY/G",
-            full: "Attempted Air Yards Per Game"
+            full: "Attempted Air Yards Per Game",
+            decimals: 1
         },
         airYardsCompletedPerGame: {
             abbreviation: "CmpAY/G",
-            full: "Completed Air Yards Per Game"
+            full: "Completed Air Yards Per Game",
+            decimals: 1
         },
         airYardCompletionPercentage: {
             abbreviation: "CmpAY%",
-            full: "Completed Air Yards Percentage"
+            full: "Completed Air Yards Percentage",
+            decimals: 1
         },
+        
+
+        // Rushing 
         rushingAttempts: {
             abbreviation: "Att",
             full: "Rushing Attempts"
@@ -99,28 +112,33 @@ let constants = {
         },
         rushingAttemptsPerGame: {
             abbreviation: "Att/G",
-            full: "Rushing Attempts Per Game"
+            full: "Rushing Attempts Per Game",
+            decimals: 1
         },
         rushingYardsPerGame: {
             abbreviation: "Yds/G",
-            full: "Rushing Yards Per Game"
+            full: "Rushing Yards Per Game",
+            decimals: 1
         },
         rushingYardsPerAttempt: {
             abbreviation: "Yds/A",
-            full: "Rushing Yards Per Attempt"
+            full: "Rushing Yards Per Attempt",
+            decimals: 2
         },
         totalYards: {
             abbreviation: "TotYds",
             full: "Total Yards"
         },
 
+        // Receiving
         receivingYards: {
             abbreviation: "Yds",
             full: "Receiving Yards"
         },
         yardsPerReception: {
             abbreviation: "Yds/R",
-            full: "Yards Per Receptions"
+            full: "Yards Per Receptions",
+            decimals: 2
         },
         receptions: {
             abbreviation: "Rec",
@@ -128,7 +146,8 @@ let constants = {
         },
         receptionsPerTarget: {
             abbreviation: "Rec/T",
-            full: "Receptions/Target"
+            full: "Receptions/Target",
+            decimals: 2
         },
 
         targets: {
@@ -137,11 +156,13 @@ let constants = {
         },
         targetsPerGame: {
             abbreviation: "T/G",
-            full: "Targets Per Game"
+            full: "Targets Per Game",
+            decimals: 2
         },
         totalYardsPerGame: {
             abbreviation: "TY/G",
-            full: "Total Yards Per Game"
+            full: "Total Yards Per Game",
+            decimals: 1
         },
         yardsAfterCatch: {
             abbreviation: "YAC",
@@ -149,7 +170,8 @@ let constants = {
         },
         yardsAfterCatchPerReception: {
             abbreviation: "YAC/R",
-            full: "Yards After Catch Per Reception"
+            full: "Yards After Catch Per Reception",
+            decimals: 2
         },
 
     }

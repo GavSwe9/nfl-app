@@ -1,5 +1,6 @@
 import React from 'react'
 import { teamLogoName } from '../../util';
+import { constants } from '../../constants'
 
 export function LeaderboardTableRow(props) {
     const fields = Object.keys(props.playerStats);
@@ -18,7 +19,7 @@ export function LeaderboardTableRow(props) {
             </th>
             {fields.slice(3).map(stat => (
                 <td key={stat} className="px-5 text-right">
-                    {props.playerStats[stat]}
+                    {constants.STAT_DISPLAY[stat].hasOwnProperty("decimals") ? props.playerStats[stat].toFixed(constants.STAT_DISPLAY[stat].decimals) : props.playerStats[stat]}
                 </td>
             ))}
         </tr>
