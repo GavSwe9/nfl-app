@@ -16,7 +16,7 @@ export function Weeks(props) {
 
             <div className="flex-1 overflow-y-auto flex flex-wrap justify-center">
                 {weekOptions.map(w => (
-                    <div className={`w-12 m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.weeks.includes(w) ? "border-green-400" : "border-white"}`} onClick={() => weekClick(w)}>
+                    <div key={w} className={`w-12 m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.weeks.includes(w) ? "border-green-400" : "border-white"}`} onClick={() => weekClick(w)}>
                         {w}
                     </div>
                 ))}

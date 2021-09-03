@@ -11,7 +11,7 @@ export function SeasonType(props) {
 
             <div>
                 {seasonTypesOptions.map(st => (
-                    <div className={`w-40 mx-auto m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.seasonType.includes(st) ? "border-green-400" : "border-white"}`} onClick={() => seasonTypeClick(st)}>
+                    <div key={st} className={`w-40 mx-auto m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.seasonType.includes(st) ? "border-green-400" : "border-white"}`} onClick={() => seasonTypeClick(st)}>
                         {st}
                     </div>
                 ))}

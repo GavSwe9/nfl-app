@@ -14,3 +14,19 @@ export function teamLogoName(team){
             return team;
     }
 }
+
+export function getTeamAllNamesArr(team){
+    switch (team) {
+        case "LV":
+            return ["OAK", "LV"];
+        case "LA":
+            return ["STL","LA"];
+        case "JAX":
+            return ["JAC","JAX"];
+        case "LAC":
+            return ["SD","LAC"];
+    
+        default:
+            return [team];
+    }
+}

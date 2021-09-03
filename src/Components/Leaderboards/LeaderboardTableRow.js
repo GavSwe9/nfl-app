@@ -11,13 +11,13 @@ export function LeaderboardTableRow(props) {
                     <div className="w-5 h-5 lg:w-10 lg:h-10">
                         <img src={`https://static.www.nfl.com/league/api/clubs/logos/${teamLogoName(props.playerStats.team)}.svg`} />
                     </div>
-                    <div className="lg:pl-2">
+                    <div className="pl-1 lg:pl-2">
                         {props.playerStats.playerName.replace(".",". ")}
                     </div>
                 </div>                
             </th>
             {fields.slice(3).map(stat => (
-                <td className="px-5 text-right">
+                <td key={stat} className="px-5 text-right">
                     {props.playerStats[stat]}
                 </td>
             ))}

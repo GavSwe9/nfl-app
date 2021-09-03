@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 export function Options(props) {
+    // A lot to optimize here.. Switch repeated option types to components, render from data, add conditional highlighting 
     let [viewMenu, setViewMenu] = useState(false);
 
     useEffect(() => {

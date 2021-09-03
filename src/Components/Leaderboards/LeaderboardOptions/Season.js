@@ -10,7 +10,7 @@ export function Season(props) {
             </div>
             <div className="overflow-y-auto flex-1">
                 {seasonOptions.map(s => (
-                    <div className={`w-24 mx-auto m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.season === s ? "border-green-400" : "border-white"}`} onClick={() => props.setSeason(s)}>
+                    <div key={s} className={`w-24 mx-auto m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.season === s ? "border-green-400" : "border-white"}`} onClick={() => props.setSeason(s)}>
                         {s}
                     </div>
                 ))}

@@ -4,6 +4,8 @@ import { LeaderboardOptions } from './LeaderboardOptions';
 import { LeaderboardTable } from './LeaderboardTable';
 
 export function Leaderboard(props) {
+    let [loading, setLoading] = useState(true);
+
     let [season, setSeason] = useState(2020);
     let [seasonType, setSeasonType] = useState(["REG"]);
     let [weeks, setWeeks] = useState([]);
@@ -11,6 +13,9 @@ export function Leaderboard(props) {
     let [playerArray, setPlayerArray] = useState([]);
 
     useEffect(() => {
+        console.log(teams);
+        setLoading(true);
+        
         let requestBody = {
             season,
             seasonType
@@ -28,8 +33,9 @@ export function Leaderboard(props) {
 
             response = await response.json();
             setPlayerArray(response);
+            setLoading(false);
         }
-    }, [season, seasonType, weeks, teams])
+    }, [season, seasonType, weeks, teams, props.endpoint])
 
     return (
         <>
@@ -37,7 +43,7 @@ export function Leaderboard(props) {
                 <LeaderboardOptions season={season} setSeason={setSeason} seasonType={seasonType} setSeasonType={setSeasonType} weeks={weeks} setWeeks={setWeeks} teams={teams} setTeams={setTeams} />
             </div>
             <div className="w-11/12 md:5/6 lg:w-2/3 mx-auto flex-1 overflow-y-auto flex flex-col">
-                <LeaderboardTable playerArray={playerArray} type={props.endpoint} />
+                <LeaderboardTable loading={loading} playerArray={playerArray} type={props.endpoint} />
             </div>
         </>
     )

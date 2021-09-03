@@ -11,7 +11,7 @@ export function Routes() {
     return (
         <Switch>
             <Route exact path="/">
-                <DownAndDistance />
+                <Leaderboard endpoint="passing" />
             </Route>
             <Route exact path="/DownAndDistance">
                 <DownAndDistance />

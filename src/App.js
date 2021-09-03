@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <Routes />
+      <div className="mt-16 flex-1 overflow-hidden flex flex-col">
+        <Routes />
+      </div>
       <Footer />
     </div>
   );

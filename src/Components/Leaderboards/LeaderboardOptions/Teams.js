@@ -1,4 +1,5 @@
 import React from 'react'
+import { getTeamAllNamesArr, teamLogoName } from '../../../util';
 
 export function Teams(props) {
     const teamOptions = [
@@ -13,7 +14,7 @@ export function Teams(props) {
 
             <div className="flex-1 overflow-y-auto flex flex-wrap justify-center">
                 {teamOptions.map(t => (
-                    <div className={`w-10 m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.teams.includes(t) ? "border-green-400" : "border-white"}`} onClick={() => teamClick(t)}>
+                    <div key={t} className={`w-10 m-1 border-2 rounded-md cursor-pointer hover:bg-gray-100 ${props.teams.includes(t) ? "border-green-400" : "border-white"}`} onClick={() => teamClick(t)}>
                         <img src={`https://static.www.nfl.com/league/api/clubs/logos/${t}.svg`} />
                     </div>
                 ))}
@@ -23,15 +24,23 @@ export function Teams(props) {
     )
 
     function teamClick(teamClicked) {
+        let teamNamesArr = getTeamAllNamesArr(teamClicked);
+
         const teamListStr = JSON.stringify(props.teams);
         let teamList = JSON.parse(teamListStr);
 
-        if (teamList.includes(teamClicked)) {
-            let index = teamList.indexOf(teamClicked);
-            teamList.splice(index, 1);
-        }
-        else {
-            teamList.push(teamClicked);
+        for (let i = 0; i < teamNamesArr.length; i++) {
+    
+            if (teamList.includes(teamNamesArr[i])) {
+                let index = teamList.indexOf(teamNamesArr[i]);
+                teamList.splice(index, 1);
+            }
+            else {
+                teamList.push(teamNamesArr[i]);
+            }
+    
+            console.log(teamList);
+            
         }
 
         props.setTeams(teamList);
