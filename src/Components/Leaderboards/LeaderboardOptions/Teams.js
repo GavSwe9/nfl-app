@@ -37,10 +37,7 @@ export function Teams(props) {
             }
             else {
                 teamList.push(teamNamesArr[i]);
-            }
-    
-            console.log(teamList);
-            
+            }            
         }
 
         props.setTeams(teamList);

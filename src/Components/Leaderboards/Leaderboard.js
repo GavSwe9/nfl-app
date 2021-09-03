@@ -13,7 +13,6 @@ export function Leaderboard(props) {
     let [playerArray, setPlayerArray] = useState([]);
 
     useEffect(() => {
-        console.log(teams);
         setLoading(true);
         
         let requestBody = {

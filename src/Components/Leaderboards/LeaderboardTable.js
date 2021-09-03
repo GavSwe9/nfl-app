@@ -3,8 +3,6 @@ import { HeaderRow } from './HeaderRow';
 import { LeaderboardTableRow } from './LeaderboardTableRow';
 
 export function LeaderboardTable(props) {
-    console.log(props.playerArray);
-
     if (props.loading) {
         return (
             <div className="w-full sm:min-h-screen lg:min-h-0 mx-auto mt-5 bg-white rounded-md border border-gray-300 flex-1 overflow-auto text-xs lg:text-sm font-mono font-light text-center">
