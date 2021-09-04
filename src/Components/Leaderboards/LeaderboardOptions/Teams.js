@@ -1,5 +1,5 @@
 import React from 'react'
-import { getTeamAllNamesArr, teamLogoName } from '../../../util';
+import { getTeamAllNamesArr } from '../../../util';
 
 export function Teams(props) {
     const teamOptions = [

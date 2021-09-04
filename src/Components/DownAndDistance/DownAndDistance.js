@@ -3,7 +3,6 @@ import { constants } from '../../constants';
 import { DownAndDistanceTeams } from './DownAndDistanceTeams';
 import { Legend } from './Legend';
 import { Options } from './Options';
-import { TeamDisplay } from './TeamDisplay';
 
 export function DownAndDistance() {
     let [loading, setLoading] = useState(false);

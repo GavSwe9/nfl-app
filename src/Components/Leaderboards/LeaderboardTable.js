@@ -33,7 +33,7 @@ export function LeaderboardTable(props) {
         return (
             <>
                 <div className="mt-5 text-sm text-gray-700 uppercase text-center">{props.type} Leaders</div>
-                <div className="max-w-full sm:min-h-screen lg:min-h-0 mx-auto bg-white rounded-md border flex-1 overflow-auto text-xs lg:text-sm font-mono font-light">
+                <div className="max-w-full sm:min-h-screen lg:min-h-0 mx-auto bg-white rounded-md border border-gray-300 flex-1 overflow-auto text-xs lg:text-sm font-mono font-light">
                     <table>
                         <thead>
                             {headerRow}
