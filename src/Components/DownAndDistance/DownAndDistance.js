@@ -39,7 +39,7 @@ export function DownAndDistance() {
                 Down & Distance Team Tendencies
             </div>
             <div className="h-20">
-                <Options setSeason={setSeason} setDown={setDown} setDistanceLowerBound={setDistanceLowerBound} setDistanceUpperBound={setDistanceUpperBound} />
+                <Options season={season} setSeason={setSeason} setDown={setDown} setDistanceLowerBound={setDistanceLowerBound} setDistanceUpperBound={setDistanceUpperBound} />
             </div>
             <div>
                 <Legend />
