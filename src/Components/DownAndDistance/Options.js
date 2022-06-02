@@ -5,7 +5,7 @@ export function Options(props) {
     let [viewMenu, setViewMenu] = useState(false);
 
     useEffect(() => {
-        seasonClick(2020);
+        seasonClick(2021);
         downClick(1);
         distanceClick(7,10);
     }, []);
