@@ -6,15 +6,20 @@ import { LeaderboardTable } from './LeaderboardTable';
 export function Leaderboard(props) {
     let [loading, setLoading] = useState(true);
 
-    let [season, setSeason] = useState(2020);
+    let [season, setSeason] = useState(2021);
     let [seasonType, setSeasonType] = useState(["REG"]);
     let [weeks, setWeeks] = useState([]);
     let [teams, setTeams] = useState([]);
     let [playerArray, setPlayerArray] = useState([]);
 
     useEffect(() => {
+        if (seasonType.length === 0) {
+            setSeasonType(['REG']); 
+            return;
+        }
+
         setLoading(true);
-        
+
         let requestBody = {
             season,
             seasonType
