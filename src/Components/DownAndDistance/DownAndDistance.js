@@ -8,7 +8,7 @@ export function DownAndDistance() {
     let [loading, setLoading] = useState(false);
 
     let [teamDataPercentages, setTeamPercentages] = useState([]);
-    let [season, setSeason] = useState(2020);
+    let [season, setSeason] = useState(2021);
     let [down, setDown] = useState(1);
     let [distanceLowerBound, setDistanceLowerBound] = useState(7);
     let [distanceUpperBound, setDistanceUpperBound] = useState(10);
